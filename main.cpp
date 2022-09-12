@@ -10,8 +10,10 @@ struct BadLengthException : public exception {
 public:
 
   BadLengthException(const int length = 0)
-    : m_msg(std::to_string(length))
-  {}
+    // : m_msg(std::to_string(length)) both do the same
+  {
+	  m_msg = std::to_string(length);
+  }
 
   virtual const char* what() const throw()
   {
